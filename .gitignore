@@ -1,0 +1,24 @@
+# Ignore sensitive information
+.netrc
+.env
+.env.*
+
+# Ignore temporary files
+*~
+.*.swp
+.DS_Store
+
+# Ignore machine-specific files
+.bash_history
+.bash_sessions/
+
+# Ignore generated files
+*.log
+tags
+
+# Ignore local customizations
+.viminfo
+
+# Ignore large directories or binaries
+node_modules/
+
