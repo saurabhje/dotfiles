@@ -7,9 +7,14 @@ return{
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    opts = {
-      auto_install = true,
-    }
+    config = function ()
+     require("mason-lspconfig").setup({
+        ensure_installed = { "lua_ls", "tsserver", "pyright" },
+        opts = {
+          auto_install = true,
+        }
+      })
+    end
   },
   {
     "neovim/nvim-lspconfig",
@@ -17,7 +22,7 @@ return{
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       lspconfig.tsserver.setup({ capabilities = capabilities})
-      lspconfig.basedpyright.setup({
+      lspconfig.pyright.setup({
         capabilities = capabilities,
         filetype = {"python"},
       })
